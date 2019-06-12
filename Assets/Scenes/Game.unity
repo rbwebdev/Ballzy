@@ -2558,6 +2558,11 @@ PrefabInstance:
       propertyPath: HightScoreText
       value: 
       objectReference: {fileID: 2060163558}
+    - target: {fileID: 7200060261606481885, guid: f7d25530f59d21041805b7ef442116f5,
+        type: 3}
+      propertyPath: redBallSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 98f07d90fc01ccd48904f991ec1afc9a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7d25530f59d21041805b7ef442116f5, type: 3}
 --- !u!1 &1788906546

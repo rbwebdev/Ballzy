@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour {
     
-    private Scene scene;
     private int score;
     private float time;
 
@@ -25,7 +24,6 @@ public class BallController : MonoBehaviour {
         Cursor.visible = false;
         score = 0;
         SetScoreText();
-        scene = SceneManager.GetActiveScene();
         Time.timeScale = 1f;
         HightScoreText.text = "HIGHT SCORE : " + PlayerPrefs.GetInt("HightScore",0).ToString();
     }

@@ -124,6 +124,10 @@ MonoBehaviour:
   ballSpeed: 500
   ScoreText: {fileID: 0}
   TimeText: {fileID: 0}
+  EndText: {fileID: 0}
+  EndScoreText: {fileID: 0}
+  HightScoreText: {fileID: 0}
+  endMenuUI: {fileID: 0}
 --- !u!1 &7200060263355820797
 GameObject:
   m_ObjectHideFlags: 0
