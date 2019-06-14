@@ -9,6 +9,8 @@ public class BallController : MonoBehaviour {
     
     private int score;
     private float time;
+    private AudioSource MyAudioSource;
+    private bool finish = false;
 
     public float ballSpeed;
     public TMP_Text ScoreText;
@@ -17,6 +19,8 @@ public class BallController : MonoBehaviour {
     public TMP_Text EndScoreText;
     public TMP_Text HightScoreText;
     public GameObject endMenuUI;
+    public AudioClip GameOverSound;
+    public AudioClip TimeOverSound;
 
 
     void Start()
@@ -26,6 +30,7 @@ public class BallController : MonoBehaviour {
         SetScoreText();
         Time.timeScale = 1f;
         HightScoreText.text = "HIGHT SCORE : " + PlayerPrefs.GetInt("HightScore",0).ToString();
+        MyAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,8 +46,9 @@ public class BallController : MonoBehaviour {
 
         time = 30 - (int)Time.timeSinceLevelLoad;
         TimeText.text = "Temps : " + time.ToString() + "s";
-        if (time == 0)
+        if (time == 0 && !finish)
         {
+            MyAudioSource.PlayOneShot(TimeOverSound);
             Finish("TIME OVER");
         }
     }
@@ -61,8 +67,9 @@ public class BallController : MonoBehaviour {
             SetScoreText();
         }
 
-        if (other.gameObject.tag == "Respawn")
+        if (other.gameObject.tag == "Respawn" && !finish)
         {
+            MyAudioSource.PlayOneShot(GameOverSound);
             Finish("GAME OVER");
         }
     }
@@ -74,6 +81,7 @@ public class BallController : MonoBehaviour {
 
     void Finish(string text)
     {
+        finish = true;
         Cursor.visible = true;
         if (score > PlayerPrefs.GetInt("HightScore"))
         {
@@ -82,7 +90,8 @@ public class BallController : MonoBehaviour {
         HightScoreText.text = "HIGHT SCORE : " + PlayerPrefs.GetInt("HightScore").ToString();
         EndText.text = text;
         EndScoreText.text = "SCORE : " + score.ToString();
-        Time.timeScale = 0f;
+        transform.position = new Vector3(200, 200, 200);
+        //Time.timeScale = 0f;
         endMenuUI.SetActive(true);
     }
 } 
