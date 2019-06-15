@@ -76,7 +76,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef6b4954913fa5e44805c4a0dd78340f, type: 2}
+  - {fileID: 2100000, guid: d4798b9869bbaf146a8dc1720f215f48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d973242b32016418a49f889a8c6f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyAudioSource: {fileID: 0}
   CollisionSound: {fileID: 8300000, guid: 98f07d90fc01ccd48904f991ec1afc9a, type: 3}
 --- !u!114 &2281594341438374253
 MonoBehaviour:
